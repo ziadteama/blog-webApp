@@ -1,0 +1,217 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #EFF2F4;
+    font-family: "Epilogue", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 22px;
+    border: none;
+}
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the parent element's color */
+    background-color: transparent; /* Remove background color */
+    border: none; /* Remove border */
+    padding: inherit; /* Remove padding */
+    margin: inherit; /* Remove margin */
+    font: inherit; /* Use the parent element's font */
+    cursor: pointer; /* Use pointer cursor */
+    width: 100%;
+}
+
+#top-bar{
+    width: 100%;
+    position: fixed;
+    background-color:#FFFFFF ;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: -1;
+}
+#top-bar .logo{
+    padding:26px;
+    padding-bottom: 0px;
+}
+.logo img{
+    margin-bottom: 16px;
+    height: 20px;
+}
+#side-bar{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    float: left;
+    width: auto;
+    height: 95vh;
+    gap: auto;
+    padding: 30px 22px;
+    border: #EFF2F4 solid 5px;
+    background-color: #FFFFFF;
+}
+.logo{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-items:center;
+    gap: 15px;
+    margin-bottom: 44px;
+}
+.logo img{
+    height: 50px;
+}
+.logo>h1{
+    color: #5D7285;
+    letter-spacing: 0.5%;
+    font-size: 22px;
+}
+.nav-buttons-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.nav-buttons-container button{
+    display: flex;
+    height: 43px;
+    width: 100%;
+    padding: 7.32px  ;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    gap: 6.12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.nav-buttons-container button h3{
+    font-size: 14.5px;
+    letter-spacing: 1%;
+    line-height: 22px;
+    font-weight: 400;
+
+}
+.nav-buttons-container button:hover{
+    background-color: #E9F5FE;
+    color: #0C7FDA;
+}
+
+form{
+    position: absolute;
+    margin: 150px 0 0 285px;
+    padding:25px;
+}
+form textarea{
+    resize: none;
+    background-color: #FFFFFF;
+    width: 1100px;
+    height: 350px;
+    max-height: fit-content;
+    border: none;
+    border-radius: 20px;
+    padding: 18px 22px;
+    color: black;
+    font-size: 24px;
+}
+form textarea::placeholder{
+    color: #B0B0B0;
+    font-size: 24px;
+}
+form textarea:focus{
+    outline: none;
+    box-shadow: 0 0 8px #aeb5ba; 
+}
+form button{
+    display: flex;
+    gap: 3px;
+    float: right;
+    margin: 15px 60px 0 0;
+    padding: 15px 15px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+form button:hover{
+    transform: scale(1.1);
+}
+.focused{
+    background-color: #d9e0e4;
+    color: #0C7FDA;
+}
+form button img{
+    height :40px;
+}
+.posts-container{
+    position: absolute;
+    margin: 150px 0 0 285px;
+    width: 1100px;
+    padding:25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    z-index: -4;
+    
+}
+.posts-container textarea{
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    overflow: hidden;
+}
+.inactive{
+    resize: none;
+    background-color: 
+    #f9f6f6;
+    height: auto;
+    width: 100%;
+    max-height: fit-content;
+    border: none;
+    border-radius: 20px;
+    padding: 18px 22px;
+    color: black;
+    font-size: 24px;
+    caret-color: transparent;
+}
+.inactive:focus{
+    outline: none;
+    box-shadow: 0 0 8px #97a1aa; 
+}
+.posts-container .container{
+    display: flex;
+    justify-content: flex-end;
+}
+.posts-container button img{
+    height: 30px;
+}
+.posts-container button{
+    border: none;
+    transition: transform 0.2s;
+    padding-right: 0;
+    margin-bottom: 30px;
+}
+.posts-container button:hover{
+    transform: scale(1.1);
+}
+.active{
+    resize: none;
+    width: 100%;
+    background-color: #FFFFFF;
+    max-height: fit-content;
+    border: none;
+    border-radius: 20px;
+    padding: 18px 22px;
+    color: black;
+    font-size: 24px;
+}
+.active:focus{
+    outline: none;
+    box-shadow: 0 0 8px #aeb5ba;
+}

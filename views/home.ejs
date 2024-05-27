@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/Navs.ejs") %>
+<form id ="myForm" action="/save" method="post"> 
+    <textarea name="postArea" id="textarea" placeholder="Write a new blog"></textarea>
+    <button id="submitResetButton"  type="submit"><img src="Assets/add.png" alt=""></button>
+    <button onclick="clearTextarea()"><img src="https://img.icons8.com/?size=100&id=cGxj6HzPbSdJ&format=png&color=000000"  alt=""></button>
+</form>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('a'); // Select all <a> tags on the page
+    links.forEach(function(link) {
+        if (link.getAttribute('href') === window.location.pathname) { // Check if the link's href matches the current page's pathname
+            link.classList.add('focused'); // Add a class to style the focused link
+        }
+    });
+});
+function clearTextarea(){
+    const textarea = document.getElementById('textarea');
+    textarea.value="";
+}
+
+</script>

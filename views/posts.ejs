@@ -1,0 +1,53 @@
+<%- include("partials/header.ejs") %>
+    <%- include("partials/Navs.ejs") %>
+        <% var index %>
+        <div class="posts-container"  >
+            <% userBlog.forEach((element,index)=> {%>
+                <textarea readonly name="blogPosted" id="myTextarea" class="inactive edit" ><%= element %>
+         </textarea>
+                <div class="container"><button class="toggleReadonly"><img
+                            src="https://img.icons8.com/?size=100&id=QytljKGT5QAQ&format=png&color=000000"
+                            alt=""></button>
+                    <button class="delete" ><img src="Assets/delete.png" alt="" ></button>
+                </div>
+
+                <%index++;}); %>
+            </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const links = document.querySelectorAll('a');
+                links.forEach(function (link) {
+                    if (link.getAttribute('href') === window.location.pathname) {
+                        link.classList.add('focused');
+                    }
+                });
+            });
+
+
+            const items = document.querySelectorAll('.toggleReadonly');
+            const textarea = document.querySelectorAll('.edit');
+            const deleteContainer = document.querySelectorAll('.delete');
+            const postContainer = document.querySelectorAll('.container');
+            for (let i = 0; i < items.length; i++) {
+                deleteContainer[i].addEventListener('click',()=>{
+                    postContainer[i].style.display='none';
+                    textarea[i].style.display='none';
+                });
+                items[i].addEventListener('click', function () {
+                    textarea[i].readOnly = !textarea[i].readOnly;
+
+                    textarea[i].classList.toggle('inactive');
+                    textarea[i].classList.toggle('active');
+                });
+                textarea[i].addEventListener('input', function () {
+                    // Reset the height to shrink the textarea if content is removed
+                    textarea[i].style.height = 'auto';
+                    // Set the height to the scroll height
+                    textarea[i].style.height = textarea[i].scrollHeight + 'px';
+                });
+
+                // Initialize the height based on the initial content
+                textarea[i].style.height = textarea[i].scrollHeight + 'px';
+            }
+        </script>
