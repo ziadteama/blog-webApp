@@ -1,18 +1,23 @@
 <%- include("partials/header.ejs") %>
     <%- include("partials/Navs.ejs") %>
-        <% var index %>
-        <div class="posts-container"  >
+        <div class="posts-container">
             <% userBlog.forEach((element,index)=> {%>
-                <textarea readonly name="blogPosted" id="myTextarea" class="inactive edit" ><%= element %>
+                <div id="textarea-<%= element.id %>" style="margin: 0; padding: 0;">
+                <form action="/deletepost" method="post"> <input type="hidden" name="id"
+                        value="<%= element.id %>"><textarea readonly name="blogPosted" id="myTextarea"
+                        class="inactive edit"><%= element.text %>
          </textarea>
-                <div class="container"><button class="toggleReadonly"><img
-                            src="https://img.icons8.com/?size=100&id=QytljKGT5QAQ&format=png&color=000000"
-                            alt=""></button>
-                    <button class="delete" ><img src="Assets/delete.png" alt="" ></button>
-                </div>
-
-                <%index++;}); %>
+                    <div class="container"><button class="toggleReadonly"><img
+                                src="https://img.icons8.com/?size=100&id=QytljKGT5QAQ&format=png&color=000000"
+                                alt=""></button>
+                        <button class="delete" type="submit"><img src="Assets/delete.png" alt=""></button>
+                    </div>
+                </form>
             </div>
+                <%index++;}); %>
+        </div>
+
+
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -30,9 +35,9 @@
             const deleteContainer = document.querySelectorAll('.delete');
             const postContainer = document.querySelectorAll('.container');
             for (let i = 0; i < items.length; i++) {
-                deleteContainer[i].addEventListener('click',()=>{
-                    postContainer[i].style.display='none';
-                    textarea[i].style.display='none';
+                deleteContainer[i].addEventListener('click', () => {
+                    postContainer[i].style.display = 'none';
+                    textarea[i].style.display = 'none';
                 });
                 items[i].addEventListener('click', function () {
                     textarea[i].readOnly = !textarea[i].readOnly;
