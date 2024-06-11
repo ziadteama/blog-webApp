@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 var name;
 var avatar;
-var blogs = [{ id: 0, text: 1 },{ id: 1, text: 2 },{ id: 2, text: 3 },{ id: 3, text: 4 },{ id: 4, text: 5 },];
+var blogs = [];
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
